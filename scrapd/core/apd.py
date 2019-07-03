@@ -34,7 +34,7 @@ async def fetch_text(session, url, params=None):
         params = {}
     try:
         async with session.get(url, params=params) as response:
-            return await response.text()
+            return await response.text(encoding="utf-8")
     except (
             aiohttp.ClientError,
             aiohttp.http_exceptions.HttpProcessingError,
